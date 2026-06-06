@@ -9,10 +9,10 @@ jobs:
   build:
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Run tests
         run: |
           xcodebuild test \
             -project Swift-Test-Project.xcodeproj \
             -scheme Swift-Test-Project \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2'
+            -destination 'platform=iOS Simulator,name=iPhone 16'
