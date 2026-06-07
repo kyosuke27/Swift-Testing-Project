@@ -23,6 +23,6 @@ jobs:
           xcodebuild test \
             -project Swift-Test-Project.xcodeproj \
             -scheme Swift-Test-Project \
-            -destination 'platform=iOS Simulator,platform=iOS Simulator' \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
             -skip-testing:Swift-Test-ProjectUITests \
             CODE_SIGNING_ALLOWED=NO
