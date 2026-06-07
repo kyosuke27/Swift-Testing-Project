@@ -10,12 +10,19 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v6
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Show available simulators
+        run: xcrun simctl list devices available
+
       - name: Run tests
         run: |
           echo "🟩 Test Start"
           xcodebuild test \
             -project Swift-Test-Project.xcodeproj \
             -scheme Swift-Test-Project \
-            -destination 'platform=iOS Simulator ' \
+            -destination 'platform=iOS Simulator' \
             -skip-testing:Swift-Test-ProjectUITests \
             CODE_SIGNING_ALLOWED=NO
